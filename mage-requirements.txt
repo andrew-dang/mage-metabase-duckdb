@@ -1,0 +1,3 @@
+dlt[duckdb]
+dlt[parquet]
+pandas

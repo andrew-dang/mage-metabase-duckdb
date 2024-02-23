@@ -1,0 +1,8 @@
+# mage project
+mage-dlt-duckdb
+mage_data
+metabase-mage_data
+personal-gcp.json
+metaduck_backend
+env_files
+.env

@@ -10,12 +10,6 @@ services:
       dockerfile: MageDockerfile
     environment:
       USER_CODE_PATH: /home/src/${PROJECT_NAME}
-      # POSTGRES_DBNAME: ${POSTGRES_DBNAME}
-      # POSTGRES_SCHEMA: ${POSTGRES_SCHEMA}
-      # POSTGRES_USER: ${POSTGRES_USER}
-      # POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-      # POSTGRES_HOST: ${POSTGRES_HOST}
-      # POSTGRES_PORT: ${POSTGRES_PORT}
     ports:
       - 6789:6789
     volumes:
@@ -27,10 +21,6 @@ services:
       container_name: backend
       env_file:
         - ./env_files/metabase_backend/.env
-      # environment:
-      #   - POSTGRES_USER=metabase
-      #   - POSTGRES_PASSWORD=metabase
-      #   - POSTGRES_DB=metabase
       volumes:
         - "./metaduck_backend:/var/lib/postgresql/data:rw"
       ports:
@@ -45,17 +35,8 @@ services:
         - metaduck:latest
     env_file:
       - ./env_files/metabase/.env
-    # environment: 
-    #   - MB_DB_TYPE=postgres
-    #   - MB_DB_NAME=metabase
-    #   - MB_DB_PORT=5432
-    #   - MB_DB_USER=metabase
-    #   - MB_DB_PASS=metabase
-    #   - MB_DB_HOST=backend
-    #   - MB_PLUGINS_DIR=/home/plugins
-      # - MB_DB_FILE=/metabase-data/metabase.db
+    # Mount duckdb database to metabase container
     volumes:
-      # - ./metabase-data:/metabase-data
       - "C:/Users/andre/Documents/GitHub/mage-zoomcamp/magic-zoomcamp/dbt/duckdb_pipeline/duckdb_database:/container/directory"
     ports: 
       - "3000:3000"

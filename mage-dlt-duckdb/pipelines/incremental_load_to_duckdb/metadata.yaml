@@ -1,0 +1,91 @@
+blocks:
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - incremental_export_test
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: incremental_download
+  retry_config: null
+  status: updated
+  timeout: null
+  type: data_loader
+  upstream_blocks: []
+  uuid: incremental_download
+- all_upstream_blocks_executed: false
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - dbt_build_all
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: incremental_export_test
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_exporter
+  upstream_blocks:
+  - incremental_download
+  uuid: incremental_export_test
+- all_upstream_blocks_executed: false
+  color: null
+  configuration:
+    dbt:
+      command: build
+    dbt_profile_target: ''
+    dbt_project_name: dbt/duckdb_pipeline
+    disable_query_preprocessing: false
+    export_write_policy: append
+    file_source:
+      path: dbts/dbt_build_all.yaml
+    use_raw_sql: false
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: yaml
+  name: dbt_build_all
+  retry_config: null
+  status: executed
+  timeout: null
+  type: dbt
+  upstream_blocks:
+  - incremental_export_test
+  uuid: dbt_build_all
+cache_block_output_in_memory: false
+callbacks: []
+concurrency_config:
+  block_run_limit: 1
+  pipeline_run_limit: 1
+conditionals: []
+created_at: '2024-02-25 11:26:48.787350+00:00'
+data_integration: null
+description: null
+executor_config: {}
+executor_count: 1
+executor_type: null
+extensions: {}
+name: incremental_load_to_duckdb
+notification_config: {}
+remote_variables_dir: null
+retry_config: {}
+run_pipeline_in_one_process: false
+settings:
+  triggers: null
+spark_config: {}
+tags: []
+type: python
+updated_at: '2024-03-03T19:40:19+00:00'
+uuid: incremental_load_to_duckdb
+variables:
+  colors:
+  - green
+  - yellow
+  - fhv
+variables_dir: /home/src/mage_data/mage-dlt-duckdb
+widgets: []

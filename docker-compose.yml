@@ -2,7 +2,9 @@ version: '3'
 services:
   magic:
     image: mageai/mageai:latest
-    command: mage start ${PROJECT_NAME}
+    command: >
+      sh -c "mage start ${PROJECT_NAME} &&
+             cp ./home/src/duckdb_pipeline ./home/src/${PROJECT_NAME}/dbt"
     env_file:
       - .env
     build:
@@ -37,7 +39,7 @@ services:
       - ./env_files/metabase/.env
     # Mount duckdb database to metabase container
     volumes:
-      - "C:/Users/andre/Documents/GitHub/mage-zoomcamp/magic-zoomcamp/dbt/duckdb_pipeline/duckdb_database:/container/directory"
+      - "./duckdb_files:/container/directory"
     ports: 
       - "3000:3000"
     depends_on:

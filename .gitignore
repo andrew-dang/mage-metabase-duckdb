@@ -1,8 +1,16 @@
 # mage project
-mage-dlt-duckdb
 mage_data
 metabase-mage_data
 personal-gcp.json
 metaduck_backend
 env_files
+dlt_schemas
 .env
+duckdb_files
+data
+.dlt
+metabase-data
+dbt_packages
+mage-dlt-duckdb/.profiles*
+mage-dlt-duckdb/.ssh_tunnel
+mage-dlt-duckdb/scratchpads

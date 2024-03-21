@@ -1,0 +1,18 @@
+
+version: 2
+
+sources:
+  - name: staging
+    database: database
+    schema: test
+
+    tables:
+      - name: green_pq_test
+      - name: yellow_pq_test
+      - name: fhv_pq_test
+
+
+models:
+  - name: stg_green
+  - name: stg_yellow
+  - name: stg_fhv

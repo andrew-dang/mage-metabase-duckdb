@@ -1,0 +1,15 @@
+triggers:
+- envs: []
+  name: meditative bird
+  pipeline_uuid: incremental_load_to_duckdb
+  schedule_interval: '@once'
+  schedule_type: time
+  settings: null
+  sla: null
+  start_time: 2024-03-02 18:06:00
+  status: inactive
+  variables:
+    colors:
+    - green
+    - yellow
+    - fhv

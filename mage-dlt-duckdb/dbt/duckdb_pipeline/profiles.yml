@@ -1,0 +1,9 @@
+duckdb_profile:
+  target: dev 
+  outputs:
+    dev:
+      type: duckdb
+      # path: 'magic-zoomcamp/dbt/duckdb_pipeline/duckdb_database/database.db'
+      path: '/home/src/duckdb_files/database.db'
+      schema: test
+      threads: 1

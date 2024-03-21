@@ -1,0 +1,35 @@
+sources:
+- description: Dataframes Mage upstream blocks
+  loader: mage
+  name: mage_duckdb_pipeline
+  schema: test
+  tables:
+  - description: Dataframe for block `duckdb_read_pq` of the `dlt_duckdb_dbt_pq` mage
+      pipeline.
+    identifier: mage_dlt_duckdb_dbt_pq_duckdb_read_pq
+    meta:
+      block_uuid: duckdb_read_pq
+      pipeline_uuid: dlt_duckdb_dbt_pq
+    name: dlt_duckdb_dbt_pq_duckdb_read_pq
+  - description: Dataframe for block `dlt_to_duckdb` of the `gleeful_ancient` mage
+      pipeline.
+    identifier: mage_gleeful_ancient_dlt_to_duckdb
+    meta:
+      block_uuid: dlt_to_duckdb
+      pipeline_uuid: gleeful_ancient
+    name: gleeful_ancient_dlt_to_duckdb
+  - description: Dataframe for block `dlt_to_duckdb` of the `initial_load_to_duckdb`
+      mage pipeline.
+    identifier: mage_initial_load_to_duckdb_dlt_to_duckdb
+    meta:
+      block_uuid: dlt_to_duckdb
+      pipeline_uuid: initial_load_to_duckdb
+    name: initial_load_to_duckdb_dlt_to_duckdb
+  - description: Dataframe for block `incremental_export_test` of the `incremental_load_to_duckdb`
+      mage pipeline.
+    identifier: mage_incremental_load_to_duckdb_incremental_export_test
+    meta:
+      block_uuid: incremental_export_test
+      pipeline_uuid: incremental_load_to_duckdb
+    name: incremental_load_to_duckdb_incremental_export_test
+version: 2
